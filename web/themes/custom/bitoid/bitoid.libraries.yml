@@ -1,0 +1,7 @@
+bitoid-lib:
+  version: 1.x
+  js:
+    js/script.js: {}
+  css:
+    theme:
+      dist/output.css: {}

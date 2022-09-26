@@ -1,0 +1,7 @@
+name: Bitoid
+type: theme
+description: 'bitoid basic theme'
+core_version_requirement: ^8 || ^9
+libraries:
+  - bitoid/global-styling
+base theme: stable

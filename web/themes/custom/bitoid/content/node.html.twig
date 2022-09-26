@@ -1,0 +1,180 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ */
+#}
+
+<article{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+       
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+   <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="styles.css" rel="stylesheet" />
+   
+<script src="https://cdn.tailwindcss.com"></script>
+    </head>
+   
+    <body>
+
+    <div class="absolute h-[140px] w-[730px] left-[355px] top-[40px] bg-white dark:bg-[#19202D] smalldiv">
+    {{ content.field_logo }}
+
+<h1 class="text-2xl absolute top-[45px] left-[190px] dark:text-white">{{ content.field_company_name }}</h1>
+ <h1 class="text-[#6E8098] absolute top-[80px] left-[190px]"> {{ content.field_company_web }}</h1>
+
+  <button class="absolute  top-[55px] left-[560px] w-[147px] rounded h-12 bg-[#5964e01a] text-violet justify-self-center md:mr-5  font-bold text-[#5964E0]"> Company Site </button>
+  </div>
+  <div class="absolute w-[730px] h-[850px] bg-white left-[355px] top-[210px] maindiv dark:bg-[#19202D]">
+<h1 class="absolute left-[10px] top-[10px] text-[#6E8098] text-base leading-[16px]">{{ content.field_time }}</h1>
+   <div class="w-1 h-1 bg-[#6E8098] rounded-full absolute left-[80px] top-[16px]"></div>
+   <h1 class="absolute left-[100px] top-[10px] text-[#6E8098] text-base leading-[16px]">{{ content.field_part_time }}</h1>
+   <h1 class="absolute left-[10px] top-[30px] text-[#19202D] text-[28px] leading-9 font-bold maintitle dark:text-white">{{ content.field_job_title }}</h1>
+   <h1 class="absolute left-[10px] top-[75px] text-[#5964E0] text-sm leading-[17px] font-bold">{{ content.field_country}}</h1>
+     <button class="absolute  top-[26px] left-[560px] w-[147px] rounded h-12 bg-[#939BF4] text-violet justify-self-center md:mr-5  text-[#FFFFFF]"> Apply Now </button>
+     <h1 class="text-[#6E8098] absolute top-[120px] left-[10px] text-sm leading-[17px] ">
+     ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
+aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel,
+Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget
+nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas,
+et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.
+purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.
+elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat,
+a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl.
+pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+     
+     
+     </h1>
+       <h1 class="absolute left-[10px] top-[270px] font-bold text-sm text-[20px] dark:text-white">Requirements</h1>
+       <h1 class="text-[#6E8098] absolute top-[320px] left-[10px] text-sm leading-[17px] ">
+Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper
+laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus.
+Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac
+urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae,ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+</h1>
+ <h1 class="absolute left-[10px] top-[430px] font-bold text-sm text-[20px] dark:text-white">What You Will Do</h1>
+
+
+ <h1 class="text-[#6E8098] absolute top-[460px] left-[10px] text-sm leading-[17px] ">
+Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus
+libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id,
+est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis.
+Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc
+sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+</h1>
+<ul class="list-decimal absolute left-[40px] top-[570px]">
+            <li class="p-3 font-bold leading-relaxed text-[#5964E0] text-violet "><div class="font-normal text-slate-500">Morbi interdum mollis sapien. Sed</div></li>
+            <li class="p-3 font-bold leading-relaxed text-[#5964E0] text-violet"><div class="font-normal text-slate-500">Phasellus lacinia magna a ullamcorper laoreet, lectus arcu pulvinar risus</div></li>
+            <li class="p-3 font-bold leading-relaxed  text-[#5964E0] text-violet"><div class="font-normal text-slate-500">Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus.</div></li>
+            <li class="p-3 font-bold leading-relaxed  text-[#5964E0] text-violet"><div class="font-normal text-slate-500">Morbi interdum mollis sapien. Sed</div></li>
+          </ul>
+          
+  </div>
+
+<div class="w-full h-[96px] bg-white absolute top-[1100px] footerdiv dark:bg-[#19202D]">
+<h1 class="absolute left-[355px] top-[10px] font-bold text-sm text-[20px] dark:text-white">{{ content.field_footer_job_title }} </h1>
+<button class="absolute  top-[10px] left-[938px] w-[147px] rounded h-12 bg-[#939BF4] text-violet justify-self-center md:mr-5  text-[#FFFFFF]"> Apply Now </button>
+<h1 class="text-[16px] text-[#6E8098] font-normal absolute left-[355px] top-[30px]">So Digital Inc.</h1>
+</div>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+           
+          }
+        }
+      }
+    }
+  </script>
+    </body>
+    </html>
+
+</article>
+
+
+

@@ -1,0 +1,145 @@
+{# form #}  
+
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="styles.css" rel="stylesheet" />
+ 
+<script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+    
+
+ 
+
+<div class="relative  flex top-[39px]">
+<form class="flex mx-auto " action=""type="get" method="POST">
+<div class= "dark:text-white relative flex flex-shrink  bg-white  dark:bg-[#19202D]  h-20 mx-auto items-center  rounded-md ">
+{# <div id="map_outer" style="position: absolute; left: 3px; z-index: 1;">
+<svg height="35" version="1.1" width="35" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
+<defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+</defs>
+<path fill="#cecece" stroke="#808080" d="M503.7,743.8C694,647.1999999999999,636.6,326.74999999999994,348.1,334.09V205.39L120.00000000000003,400.39L348.1,606.19V474.59000000000003C589,469.09000000000003,578,677.3900000000001,503.70000000000005,743.8900000000001Z" stroke-width="40" stroke-opacity="1" fill-opacity="1" transform="matrix(0.05,0,0,0.05,-1.9,-5.7)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-opacity: 1; fill-opacity: 1; cursor: pointer;">
+</path>
+</svg>
+</div> #}
+<div class="relative flex left-8 ">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.024 15.0588H17.1123L23.9435 21.9037L21.9037 23.9435L15.0588 17.1123V16.0308L14.6824 15.6544C13.1286 16.9891 11.1093 17.7968 8.89842 17.7968C3.98374 17.7968 0 13.8131 0 8.89842C0 3.98374 3.98381 0 8.89842 0C13.813 0 17.7968 3.98374 17.7968 8.89842C17.7968 11.1093 16.9891 13.1286 15.6475 14.6824L16.024 15.0588ZM2.73799 8.89842C2.73799 12.3003 5.49651 15.0588 8.89842 15.0588C12.3003 15.0588 15.0588 12.3003 15.0588 8.89842C15.0588 5.49651 12.3003 2.73799 8.89842 2.73799C5.49651 2.73799 2.73799 5.49651 2.73799 8.89842Z" fill="#5964E0"/>
+</svg>{# 
+
+
+
+
+
+
+<html>
+  <body>
+    <svg>
+      <path d="M 0 0 L 50 0 L 50 50" id="myPath" />
+    </svg>
+    <script>
+      document.getElementById("myPath").setAttribute("d", "M 0 0 L 0 50 L 50 50");
+    </script>
+  </body>
+</html>
+
+
+
+
+#}
+<input class="outline-none  h-6 ml-4 w-[271px] rounded-md border-none outline-hidden  focus:border-none focus:outline-none dark:bg-[#19202D] " type="text"  value="" name="title" id="title" placeholder="Filter by title, companies, expertise…">
+</div>
+<div class="flex ml-[144px]">
+<svg width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.44766 0C10.6803 0 12.7796 0.870546 14.3584 2.45105C17.2802 5.37556 17.6433 10.8781 15.1348 14.2255L8.44766 23.894L1.75053 14.2119C-0.748035 10.8781 -0.384933 5.37556 2.53689 2.45105C4.11571 0.870546 6.21455 0 8.44766 0ZM5.47353 8.29091C5.47353 9.97484 6.84268 11.3455 8.52481 11.3455C10.2069 11.3455 11.5761 9.97484 11.5761 8.29091C11.5761 6.60698 10.2069 5.23636 8.52481 5.23636C6.84268 5.23636 5.47353 6.60698 5.47353 8.29091Z" fill="#5964E0"/>
+{# 
+
+///////////////////////////////////////////////////////???/////////////////////////////??????????///
+
+#}
+</svg>
+
+<input class="outline-none h-6 ml-4 w-[135px] rounded-md border-none outline-hidden  focus:border-none focus:outline-none dark:bg-[#19202D]"  type="text"  value="" name="location" id="location" placeholder="Filter by location…">
+</div>
+<div class="relative flex  ml-[140px] h-6">
+
+
+{#  <svg>
+  <path d="..." id="myPath></path>
+</svg>
+<script>
+  document.getElementById("myPath").setAttribute("d", "M 0 0 L 0 50 L 50 50");
+</script>
+
+
+#}
+<input class="rounded-[3px]  w-6 h-6 checked:opacity-100 accent-[#939BF4] opacity-10 mix-blend-normal " type="checkbox" name="full_time" value="full" id="full_time">
+<p class="dark:text-white  leading-5  text-[16px] ml-4 font-bold text-[#19202D]">Full Time Only</p>
+</div>
+
+{#
+
+public static bool i = false;
+
+private void BtnDark_Click(object sender, EventArgs e)
+{
+    i = true;
+
+    if (i == true) // Darkmode
+    {
+        //...
+        i = false;
+    }
+    else if (i == false) // Whitemode
+    {
+        //...
+        i = true;
+    }
+}#}
+
+<div class=" relative flex ml-7 w-[140px]">
+<button  type="submit" value="full" name="" class="w-[123px] h-12 rounded-md  bg-[#5964E0] hover:bg-[#939BF4] text-base font-bold text-white " >Search</button></div>
+</div>
+</div>
+</form>
+</div>
+
+ <div class="pt-[140px] grid md:grid-cols-2 xl:grid-cols-3 dark-off dark:bg-[#19202D]">
+  {% for job in jobs %}
+  
+    <ul class="bg-white dark:bg-veryDarkBlue mt-[50px] pl-8 pr-6 w-[327px] min-h-[228px] rounded-md box-border mx-auto md: w-[339] xl: w-[350] dark:bg-[#19202D]">
+       <li class="relative bottom-6"><img class="rounded-2xl w-[50px] h-[50px]"src={{ job.job_logo }}/></li>
+       <div class="flex mb-4 text-sm text-darkGrey">
+        <li class="text-[#6E8098]">{{ job.work_time }} </li>
+        <p>&nbsp; . &nbsp;</p>
+        <li class="text-[#6E8098]">{{ job.job_type }}</li> 
+       </div>
+       <li class="my-4 text-xl font-bold break-words"><a class="text-[#19202D] dark:text-white"href="/node/{{ job.id }}">{{ job.job_title }}</a>  </li>
+       <li class="text-[#6E8098] mt-4 mb-11 text-sm dark:text-white">{{ job.job_company_name }}</li>
+       <li class="text-violet text-[#5964E0] font-bold text-xs pb-9">{{ job.job_country }} </li>
+    </ul> 
+  {% endfor %}    
+  </div>
+
+
+ 
+   <button class="absolute left-[600px] top-[1700px] justify-self-center rounded-md text-white bg-[#5964E0] w-[141px] h-[48px]">Load More</button>
+     <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+           
+          }
+        }
+      }
+    }
+  </script>
+      </body>
+      </html>       

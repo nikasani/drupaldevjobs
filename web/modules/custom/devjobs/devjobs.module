@@ -1,0 +1,14 @@
+<?php
+
+function devjobs_theme($existing, $type, $theme, $path) {
+  // Name of the theme hook. This is used in the controller to trigger the hook.
+  return [
+    'jobs' => [
+
+      'variables' => [
+        'jobs' => [],
+
+      ],
+    ],
+  ];
+}
